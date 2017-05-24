@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PluralsightExample;
 using PluralsightExample.Controllers;
+using NUnit.Framework;
+using PluralsightExample.Models;
 
 namespace PluralsightExample.Tests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class HomeControllerTest
     {
-        [TestMethod]
+        [Test]
         public void Index()
         {
             // Arrange
@@ -25,7 +26,7 @@ namespace PluralsightExample.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
+        [Test]
         public void About()
         {
             // Arrange
@@ -35,10 +36,10 @@ namespace PluralsightExample.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.AreEqual("About", result.ViewBag.Title);
         }
 
-        [TestMethod]
+        [Test]
         public void Contact()
         {
             // Arrange
