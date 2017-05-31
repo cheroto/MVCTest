@@ -16,7 +16,7 @@ namespace PluralsightExample
             routes.MapRoute(
                 name:"test",
                 url: "test/{id}",
-                defaults: new {controller = "Test", action = "Index", id = ""}
+                defaults: new {controller = "Test", action = "TestAction", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
