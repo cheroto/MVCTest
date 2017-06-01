@@ -14,6 +14,13 @@ namespace PluralsightExample
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "reviews",
+                url: "reviews/{name}",
+                defaults: new {controller = "Reviews", action = "Index", id = UrlParameter.Optional}
+
+            );
+
+            routes.MapRoute(
                 name:"test",
                 url: "test/{id}",
                 defaults: new {controller = "Test", action = "TestAction", id = UrlParameter.Optional }

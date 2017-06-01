@@ -36,5 +36,15 @@ namespace PluralsightExample.Controllers
 
             return View();
         }
+
+        public ActionResult Redirect()
+        {
+            return RedirectPermanent("http://www.google.com");
+        }
+
+        public ActionResult GoToAction()
+        {
+            return RedirectToAction("Contact", "Home");
+        }
     }
 }

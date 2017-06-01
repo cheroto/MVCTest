@@ -7,6 +7,7 @@ using PluralsightExample.Models;
 
 namespace PluralsightExample.Controllers
 {
+    [HandleError]
     public class TestController : Controller
     {
         // GET: Test
