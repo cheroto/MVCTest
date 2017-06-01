@@ -23,11 +23,8 @@ namespace PluralsightExample.Controllers
         public ActionResult About()
         {
             ViewBag.Title = "About";
-            var info = new AboutModel();
-            info.Name = "Oasis Aqualounge";
-            info.Location = "Downtown Toronto";
 
-            return View(info);
+            return View();
         }
 
         public ActionResult Contact()
