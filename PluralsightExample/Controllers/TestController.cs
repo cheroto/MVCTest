@@ -11,13 +11,12 @@ namespace PluralsightExample.Controllers
     public class TestController : Controller
     {
         // GET: Test
-        public ActionResult TestAction(string id)
+        public ActionResult TestAction()
         {
-            //var model = new AboutModel();
-            //model.Name = id;
-            //return Content(model);
-            string model = id;
-            return View((object)model);
+            var _db = new WebstoreDB();
+            var model = _db.Products.ToList();
+
+            return View(model);
         }
     }
 }
