@@ -11,10 +11,11 @@ namespace PluralsightExample.Controllers
     public class TestController : Controller
     {
         // GET: Test
-        public ActionResult TestAction()
+        public ActionResult TestAction(string filterTerm)
         {
             var _db = new WebstoreDB();
-            var model = _db.Products.ToList();
+            var model = _db.Products.ToList().OrderBy(p => p.ProductName).Where(p => filterTerm == null || p.CategoryID == int.Parse(filterTerm));
+            
 
             return View(model);
         }

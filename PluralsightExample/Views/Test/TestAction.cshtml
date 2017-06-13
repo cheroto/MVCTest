@@ -5,12 +5,22 @@
 
 
 <h2>Product List</h2>
+<br />
+
+<div name="filterTerm">1</div>
+
 <hr />
 
-@foreach (var product in Model.OrderBy(P => P.ProductName))
+@{
+    var list = Model.OrderBy(P => P.ProductName);
+
+}
+
+
+@foreach (var product in Model)
 {
     <div>
-        <p style="text-align:left;">@product.ProductName:
+        <p style="text-align:left;">@product.ProductName
         <span style="float:right;">@String.Format("{0:c}", product.UnitPrice)</span>
         </p>
     </div>
